@@ -1,8 +1,13 @@
-version: '3.8'
-
+version: '3'
 services:
-  web:
+  fastapi-app:
     build: .
     ports:
       - "8000:8000"
+    volumes:
+      - data-volume:/app/data
+
+volumes:
+  data-volume:
+    driver: local
 
